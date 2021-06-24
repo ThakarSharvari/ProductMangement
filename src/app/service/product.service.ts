@@ -25,7 +25,7 @@ export class ProductService {
     {
       id: 2,
       image: 'https://media.wired.com/photos/5f401ecca25385db776c0c46/master/w_2560%2Cc_limit/Gear-How-to-Apple-ios-13-home-screen-iphone-xs-06032019_big_large_2x.jpg',
-      description: 'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss',
+      description: 'The All New OnePlus 9 R, Level Up - the New onePlus 9R comes with Qualcomm Snapdragon 870 5G with upgraded Qualcomm Kryo 585 CPU that performs intense mobile computing at up to 3.2 GHz and also comes with an ultra-fast Qualcomm Adreno 650 GP.',
       name: 'Phone2',
       title: 'Test Title',
       rating: 4,
@@ -37,7 +37,7 @@ export class ProductService {
     {
       id: 3,
       image: 'https://images.indianexpress.com/2019/09/toys.jpg',
-      description: 'Designed in an attractive colour from soft fabric, your kids will not stop hugging and squeezing this plush toy in their arms. This cute soft toy is sure to become your childs best companion! Extremely soft and cosy with heartwarming eyes that beg for a cuddly hug, this soft toy is irresistible! Made from top quality material, this toy is easy to carry and cuddle',
+      description: 'Designed in an attractive colour from soft fabric, your kids will not stop hugging and squeezing this plush toy in their arms. This cute soft toy is sure to become your childs best companion! Extremely soft and cosy with heartwarming.',
       name: 'Phone3',
       title: 'Test Title',
       rating: 4,
@@ -135,6 +135,7 @@ export class ProductService {
 
   setProducts() {
     return new Promise((resolve, reject) => {
+      debugger;
       localStorage.setItem('products', JSON.stringify(this.products))
       localStorage.setItem('trash', JSON.stringify(this.trash))
       resolve('Success')

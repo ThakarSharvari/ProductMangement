@@ -8,7 +8,7 @@ import { ProductService } from 'src/app/service/product.service';
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.css']
+  styleUrls: ['./add-product.component.scss']
 })
 export class AddProductComponent implements OnInit {
 
@@ -57,8 +57,10 @@ export class AddProductComponent implements OnInit {
       })
     }
     else {
+      debugger;
       let index = this.productService.products.findIndex(x => x.id === this.productForm.controls['id'].value)
-      this.productService.products.splice(index, 1, this.productForm.value)
+      this.productService.products.splice(index, 1, this.productForm.value);
+      this.productService.setProducts();
     }
     this.dialogRef.close()
   }

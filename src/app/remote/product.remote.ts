@@ -32,6 +32,7 @@ export class productRemote {
 
     addProduct(product: product) {
         return new Promise((resolve, reject) => {
+
             product.id = this.productService.products.length + 1;
             this.productService.products.push(product)
             this.productService.setProducts()
