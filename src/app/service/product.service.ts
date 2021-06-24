@@ -135,7 +135,7 @@ export class ProductService {
 
   setProducts() {
     return new Promise((resolve, reject) => {
-      debugger;
+
       localStorage.setItem('products', JSON.stringify(this.products))
       localStorage.setItem('trash', JSON.stringify(this.trash))
       resolve('Success')
