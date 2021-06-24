@@ -1,0 +1,63 @@
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-1">
+            <mat-icon>arrow_back_ios</mat-icon>
+            <span class="labelColor aligned-with-icon" style="cursor: pointer;" routerLink="/product-list"> Back</span>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-4">
+            <img [src]="Product.image">
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-sm">
+                    <h2>{{Product.title}}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    {{Product.name}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <ngx-stars [readonly]="true" [initialStars]="Product.rating"></ngx-stars>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    ${{Product.price}}
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-sm input-group">
+                    <label class="labelColor"> Category</label> &nbsp;&nbsp;
+                    {{Product.category}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm input-group">
+                    <label class="labelColor"> Location</label> &nbsp;&nbsp;
+                    {{Product.location}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm input-group">
+                    <label class="labelColor"> Stock</label> &nbsp;&nbsp;
+                    {{Product.stock}}
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-sm wrap">
+                    {{Product.description}}
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-sm">
+                    <button class="btn btn-danger"> Delete Product</button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+.aligned-with-icon{
+    position: absolute;
+    margin-top: 1px;
+    margin-left: -7px;
+}
+
+.wrap{ word-wrap: break-word; }

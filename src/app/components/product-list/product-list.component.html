@@ -1,0 +1,94 @@
+<div class="container mt-1">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <input class="form-control ml-4" style="width: 30%; margin-left: 70%;" type="text"
+                        placeholder="Search Products By Name" (keyup.enter)="searchProduct()" #search>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mt-2">
+                    <mat-card>
+                        <div class="row">
+                            <div class="col">
+                                <h3>Filters</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <section>
+                                    <h5>Category</h5>
+                                    <mat-checkbox class="checkbox-margin" *ngFor="let category of category"
+                                        (change)="categoryFilter(category, $event.checked)"
+                                        [checked]="category.checked">
+                                        {{category.value}}
+                                    </mat-checkbox>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col">
+                                <h5>Location</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <section>
+                                    <mat-checkbox class="checkbox-margin" *ngFor="let location of location"
+                                        (change)="locationFilter(location, $event.checked)"
+                                        [checked]="location.checked">
+                                        {{location.value}}
+                                    </mat-checkbox>
+                                </section>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+
+                            </div>
+                        </div>
+                    </mat-card>
+                </div>
+                <div class="col mt-4" *ngIf="productList.length === 0">
+                    <h4>No products available.</h4>
+                </div>
+
+                <div class="col list-content  mt-2">
+                    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+                        <div fxFlex="33.33%" *ngFor="let product of productList">
+                            <mat-card>
+                                <mat-card-header>
+                                    <mat-card-title>{{product.title}}</mat-card-title>
+                                    <mat-chip style="height: 21px;" [ngClass]="{'inStockChip':product.stock === enums.InStock,
+                                        'outStockChip':product.stock === enums.OutStock}">
+                                        {{product.stock}}</mat-chip>
+                                    <mat-card-subtitle>{{product.name}}</mat-card-subtitle>
+                                </mat-card-header>
+                                <img mat-card-image [src]="product.image">
+
+                                <mat-card-content>
+                                    <p>
+                                        {{product.description}}
+                                    </p>
+                                </mat-card-content>
+                                <mat-card-actions>
+                                    <button class="btn btn-primary"
+                                        routerLink="/product-detail/{{product.id}}">View</button>&nbsp;&nbsp;
+                                    <button class="btn btn-danger"
+                                        (click)="deleteProduct(product.id)">Delete</button>&nbsp;&nbsp;
+                                    <button class="btn btn-info" (click)="editProduct(product)">Edit</button>
+                                </mat-card-actions>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <button class="btn .pmd-btn-fab .pmd-btn-raised btn-warning float-button" (click)="addProduct()">
+                        Add Product</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

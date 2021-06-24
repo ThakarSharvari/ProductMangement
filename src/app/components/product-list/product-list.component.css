@@ -1,0 +1,27 @@
+.checkbox-margin {
+    margin: 0 10px;
+  }
+
+.float-button{
+  position:fixed;
+	bottom:40px;
+	right:40px;
+}
+
+.list-content{
+  height: 620px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.inStockChip{
+  background-color: green !important;
+  color:black  !important
+}
+.outStockChip{
+  background-color: red !important;
+  color:black  !important
+}
+p{ word-wrap: break-word;
+   /* height: 220px;
+    width: auto; */
+  }

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col list-content  mt-2">
+            <div fxLayout="row wrap" fxLayoutGap="16px grid">
+                <div fxFlex="33.33%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let product of trash">
+                    <mat-card>
+                        <mat-card-header>
+                            <mat-card-title>{{product.title}}</mat-card-title>
+                            <!-- <mat-chip [ngClass]="{'inStock':product.stock == enums.InStock,
+                                    'outStock':product.stock == enums.OutStock }"
+                                style="height: 3px;width: 4px;">
+                                {{product.stock}}</mat-chip> -->
+                            <mat-card-subtitle>{{product.name}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image [src]="product.image">
+
+                        <mat-card-content>
+                            <p>
+                                {{product.description}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button class="btn btn-danger"
+                                (click)="deleteProduct(product.id)">Delete</button>&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-primary" (click)="restoreProduct(product.id)">Restore</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="col mt-3" *ngIf="trash.length === 0">
+                <h4>No products available.</h4>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.list-content{
+  height: 670px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  }
+label{
+    color: rgb(206, 205, 205);
+}
+p{ word-wrap: break-word;
+  /* height: 220px;
+   width: auto; */
+ }

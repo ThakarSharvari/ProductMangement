@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+html, body { height: 100%; }
+body {
+    margin: 1 px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    overflow-y: hidden;
+    }
+
+.container{
+    color:rgb(185, 185, 185);
+}
+.mat-dialog-container{
+    background-color: rgb(49, 46, 46);
+}
+.mat-card{
+    background-color:  rgba(75, 73, 73, 0.486);
+  }
+.mat-card, .mat-card-subtitle, .mat-checkbox{
+    color: rgb(221, 221, 221);
+  }
+.labelColor{
+    color: rgb(206, 205, 205);
+    font-weight: 550;
+}

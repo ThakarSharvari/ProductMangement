@@ -1,0 +1,8 @@
+label{
+    margin-top: 6px;
+}
+
+input, textarea, select{
+    background-color: rgb(49, 46, 46) !important;
+    color: beige !important
+}

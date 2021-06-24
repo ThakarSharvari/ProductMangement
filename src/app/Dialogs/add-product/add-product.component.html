@@ -1,0 +1,121 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+                <div class="form-group" hidden>
+                    <input type="text" formControlName="id">
+                </div>
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Product Name" formControlName="name">
+                    <span *ngIf="submitted && f.name.errors">
+                        <span class="text-danger" *ngIf="submitted && f.name.errors?.required">Name is required.</span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="Enter Product Title" formControlName="title">
+                    <span *ngIf="submitted && f.title.errors">
+                        <span class="text-danger" *ngIf="submitted && f.title.errors?.required">Title is
+                            required.</span>
+                        <span class="text-danger" *ngIf="submitted && f.title.errors?.maxlength">Title should not be
+                            more
+                            than 50
+                            characters.</span>
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" class="form-control" placeholder="Enter Product Price" formControlName="price">
+                    <span *ngIf="submitted && f.price.errors">
+                        <span class="text-danger" *ngIf="submitted && f.price.errors?.required">Price is
+                            required.</span>
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label>Rating</label>
+                    <ngx-stars formControlName="rating" [color]="'beige'"></ngx-stars>
+                    <!-- <span *ngIf="submitted && f.rating.errors">
+                        <span class="text-danger" *ngIf="submitted && f.rating.errors?.required">Rating is
+                            required.</span>
+                    </span>
+                    {{productForm.controls.rating.value}} -->
+                </div>
+
+                <div class="form-group">
+                    <label>Image Url</label>
+                    <input type="text" class="form-control" placeholder="Enter Product Image Url"
+                        formControlName="image">
+                    <span *ngIf="submitted && f.image.errors">
+                        <span class="text-danger" *ngIf="submitted && f.image.errors?.required">ImageUrl is
+                            required.</span>
+                        <span class="text-danger" *ngIf="submitted && f.image.errors?.pattern">ImageUrl should be in
+                            valid
+                            format.</span>
+                    </span>
+                </div>
+
+                <div class="form-group mt-1">
+                    <mat-radio-group aria-label="Select an option" formControlName="stock">
+                        <mat-radio-button [value]='enums.InStock'>{{enums.InStock}}
+                        </mat-radio-button> &nbsp;
+                        <mat-radio-button [value]='enums.OutStock'>{{enums.OutStock}}</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <!-- <input type="textarea" class="form-control" placeholder="Enter Product Description"
+                        > -->
+                    <textarea class="form-control" rows="5" formControlName="description"></textarea>
+                    <span *ngIf="submitted && f.description.errors">
+                        <span class="text-danger" *ngIf="submitted && f.description.errors?.required">Description is
+                            required.</span>
+                        <span class="text-danger" *ngIf="submitted && f.description.errors?.minlength">Description
+                            should be
+                            atleast 150
+                            characters.</span>
+                        <span class="text-danger" *ngIf="submitted && f.description.errors?.maxlength">Description
+                            should not
+                            be more than 150
+                            characters.</span>
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label>
+                    <select class="form-control" formControlName="location">
+                        <option value="">Select location</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                    </select>
+                    <span *ngIf="submitted && f.location.errors">
+                        <span class="text-danger" *ngIf="submitted && f.location.errors?.required">Location is
+                            required.</span>
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select class="form-control" formControlName="category">
+                        <option value="">Select category</option>
+                        <option value="Toys">Toys</option>
+                        <option value="Home Appliances">Home Appliances</option>
+                        <option value="Electronics">Electronics</option>
+                    </select>
+                    <span *ngIf="submitted && f.category.errors">
+                        <span class="text-danger" *ngIf="submitted && f.category.errors?.required">Category is
+                            required.</span>
+                    </span>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-1">Submit</button>
+                &nbsp;
+                <button type="button" class="btn btn-secondary mt-1" mat-dialog-close>Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

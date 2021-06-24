@@ -1,0 +1,27 @@
+.example-container {
+    /* top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    background-color: rgb(49, 46, 46);
+  }
+
+  .example-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+  }
+
+  .mat-sidenav{
+    background-color:  rgb(73, 69, 69);
+  }
+
+  .mat-sidenav-container{
+    background-color:  rgb(49, 46, 46);
+  }
+
+  .mat-list-item.active{
+    background-color: rgb(110, 106, 106);
+  }
+  
