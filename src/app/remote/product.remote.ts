@@ -21,7 +21,7 @@ export class productRemote {
     }
 
     getProduct(id: number) {
-        return of(this.productService.products.filter(x => { return x.id === id }))
+        return of(this.productService.products.filter(x => { return x.id === Number(id) }))
     }
 
     getAllTrashProduct() {
