@@ -58,7 +58,7 @@ export class AddProductComponent implements OnInit {
     }
     else {
 
-      let index = this.productService.products.findIndex(x => x.id === this.productForm.controls['id'].value)
+      var index = this.productService.products.findIndex(x => x.id === this.productForm.controls['id'].value)
       this.productService.products.splice(index, 1, this.productForm.value);
       this.productService.setProducts();
     }

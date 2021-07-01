@@ -28,7 +28,7 @@ export class TrashComponent implements OnInit {
   }
 
   restoreProduct(id: number) {
-    let index = this.trash.findIndex(x => x.id === id);
+    var index = this.trash.findIndex(x => x.id === id);
     this.productService.products.push(this.trash[index]);
     // this.trash.splice(index, 1);
     this.trash.splice(index, 1);
@@ -37,7 +37,7 @@ export class TrashComponent implements OnInit {
   }
 
   deleteProduct(id: number) {
-    const dialogConfig = new MatDialogConfig();
+    var dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     var deleteProductProperties: deleteProductProperty = {
       message: 'Are you sure you want to delete this product ?',
@@ -45,13 +45,13 @@ export class TrashComponent implements OnInit {
         dialog.close()
       },
       delete: () => {
-        let index = this.trash.findIndex(x => x.id === id);
+        var index = this.trash.findIndex(x => x.id === id);
         this.trash.splice(index, 1);
         this.productService.setProducts()
         dialog.close()
       }
     };
     this.deleteProductService.setProperty(deleteProductProperties);
-    const dialog = this.matDialog.open(DeleteProductComponent, dialogConfig)
+    var dialog = this.matDialog.open(DeleteProductComponent, dialogConfig)
   }
 }
