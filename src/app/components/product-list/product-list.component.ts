@@ -52,15 +52,15 @@ export class ProductListComponent implements OnInit {
   }
 
   deleteProduct(id: number) {
-    var dialogConfig = new MatDialogConfig();
+    let dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
-    var deleteProductProperties: deleteProductProperty = {
+    let deleteProductProperties: deleteProductProperty = {
       message: 'Are you sure you want to delete this product ?',
       cancel: () => {
         dialog.close()
       },
       delete: () => {
-        var index = this.productList.findIndex(x => x.id === id);
+        let index = this.productList.findIndex(x => x.id === id);
         this.productService.trash.push(this.productList[index]);
         this.productList.splice(index, 1);
         this.productService.setProducts();
@@ -68,11 +68,11 @@ export class ProductListComponent implements OnInit {
       }
     };
     this.deleteProductService.setProperty(deleteProductProperties);
-    var dialog = this.matDialog.open(DeleteProductComponent, dialogConfig)
+    let dialog = this.matDialog.open(DeleteProductComponent, dialogConfig)
   }
 
   searchProduct() {
-    var search: string = this.search.nativeElement.value;
+    let search: string = this.search.nativeElement.value;
     if (search === "")
       this.getProducts()
     else
@@ -83,7 +83,7 @@ export class ProductListComponent implements OnInit {
   }
 
   categoryFilter(category: any, checked: boolean) {
-    var index = this.selectedCategoryFilters.indexOf(category.value)
+    let index = this.selectedCategoryFilters.indexOf(category.value)
     category.checked = checked;
     if (index !== -1) {
       this.selectedCategoryFilters.splice(index, 1)
@@ -93,7 +93,7 @@ export class ProductListComponent implements OnInit {
   }
 
   locationFilter(location: any, checked: boolean) {
-    var index = this.selectedLocationFilters.indexOf(location.value)
+    let index = this.selectedLocationFilters.indexOf(location.value)
     location.checked = checked;
     if (index !== -1) {
       this.selectedLocationFilters.splice(index, 1)
@@ -114,18 +114,18 @@ export class ProductListComponent implements OnInit {
   }
 
   addProduct() {
-    var dialogConfig = new MatDialogConfig();
+    let dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.height = '600px',
       dialogConfig.width = '600px',
       dialogConfig.data = {
         isEdit: false
       }
-    var dialog = this.matDialog.open(AddProductComponent, dialogConfig)
+    let dialog = this.matDialog.open(AddProductComponent, dialogConfig)
   }
 
   editProduct(product: product) {
-    var dialogConfig = new MatDialogConfig();
+    let dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.height = '800px',
       dialogConfig.width = '800px',
@@ -133,7 +133,7 @@ export class ProductListComponent implements OnInit {
         isEdit: true,
         product: product
       }
-    var dialog = this.matDialog.open(AddProductComponent, dialogConfig)
+    let dialog = this.matDialog.open(AddProductComponent, dialogConfig)
   }
 }
 
